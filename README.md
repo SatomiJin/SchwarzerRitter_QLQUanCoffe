@@ -1,0 +1,3 @@
+- thay đổi đường dẫn trong DataProvider là có thể sử dụng được
+- thay đổi đường dẫn bằng đường dẫn vào cơ sở dữ liệu của bạn
+  -file data.sql là file gốc bào gồm các câu lệnh khởi tạo và chú thích
