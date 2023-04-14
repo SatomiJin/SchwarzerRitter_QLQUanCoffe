@@ -21,6 +21,13 @@ namespace QLQuanCaPhe
         public fTableManager(Account acc) //truyền account vào TableManager
         {
             InitializeComponent();
+            //chỉnh sủa giao diện 1 tí
+            this.BackgroundImage = Properties.Resources.managementBackground;
+            this.flpTable.BackColor = Color.Transparent;
+            this.menuStrip1.BackColor = Color.BurlyWood;
+            this.Icon = Properties.Resources.logo;
+            //---------------------------------------------------------------------------------
+
             this.LoginAccount = acc;
 
             LoadAll();
@@ -34,15 +41,12 @@ namespace QLQuanCaPhe
             LoadTable();
             LoadCategory();
             LoadComboBoxTable(cbSwitchTable);
-            //chỉnh sủa giao diện 1 tí
-            this.BackgroundImage = Properties.Resources.managementBackground;
-            this.flpTable.BackColor = Color.Transparent;
-            this.menuStrip1.BackColor = Color.BurlyWood;
-            this.Icon = Properties.Resources.logo;
+
         }
-        void ChangeAccount(int type) //tạo 1 hàm dùng để kiểm tra xem tài khoản là admin hay nhân viên
-                                     //nếu tài khoản là admin thì type là 1 , ngược lại là nhân viện type là 0
-                                     //type mặc định là 0
+        void ChangeAccount(int type)
+        //tạo 1 hàm dùng để kiểm tra xem tài khoản là admin hay nhân viên
+        //nếu tài khoản là admin thì type là 1 , ngược lại là nhân viện type là 0
+        //type mặc định là 0
         {
             adminToolStripMenuItem.Enabled = type == 1;
             thôngTinTàiKhoảnToolStripMenuItem.Text += " (" + LoginAccount.DisplayName + ")";
@@ -107,12 +111,9 @@ namespace QLQuanCaPhe
                         //
                         //btn.BackgroundImage = Properties.Resources.backgroudTable;
 
-                        //màu chữ
-                        //btn.ForeColor = Color.White;
                         break;
                     default:
                         //tương tự trên
-                        //btn.BackColor = Color.SandyBrown;
                         //bàn có ng và ảnh
                         Image tableFull = Properties.Resources.TableFull;
                         Bitmap bmpTableFull = new Bitmap(tableFull);
@@ -120,7 +121,7 @@ namespace QLQuanCaPhe
                         Image thumbTableFull = bmpTableFull.GetThumbnailImage(btn.Width, btn.Height, null, IntPtr.Zero);
                         btn.BackgroundImage = thumbTableFull;
                         btn.BackgroundImageLayout = ImageLayout.Stretch;
-                        //
+
                         break;
                 }
 

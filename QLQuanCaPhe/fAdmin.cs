@@ -259,16 +259,21 @@ namespace QLQuanCaPhe
 
             if (TableDAO.Instance.InsertTable(name, status))
             {
-                MessageBox.Show("Thêm bàn thành công!!!");
-                LoadListTable();
-                if (insertTable != null)
+                DialogResult result = MessageBox.Show("Bạn có muốn thêm bàn mới ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
                 {
-                    insertTable(this, new EventArgs());
+
+                    MessageBox.Show("Thêm bàn thành công!!!", "Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadListTable();
+                    if (insertTable != null)
+                    {
+                        insertTable(this, new EventArgs());
+                    }
                 }
             }
             else
             {
-                MessageBox.Show("Có lỗi xẩy ra! Vui lòng thử lại");
+                MessageBox.Show("Có lỗi xẩy ra! Vui lòng thử lại", "Errors", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         //thêm loại
@@ -277,16 +282,21 @@ namespace QLQuanCaPhe
             string name = txbCategoryName.Text;
             if (CategoryDAO.Instance.InsertCategory(name))
             {
-                MessageBox.Show("Thêm Loại thành công!!!");
-                LoadListCategory();
-                if (insertCategory != null)
+                DialogResult result = MessageBox.Show("Bạn có muốn thêm danh mục này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
                 {
-                    insertCategory(this, new EventArgs());
+
+                    MessageBox.Show("Thêm Loại thành công!!!", "Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadListCategory();
+                    if (insertCategory != null)
+                    {
+                        insertCategory(this, new EventArgs());
+                    }
                 }
             }
             else
             {
-                MessageBox.Show("Có lỗi xẩy ra! Vui lòng thử lại");
+                MessageBox.Show("Có lỗi xẩy ra! Vui lòng thử lại", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -298,16 +308,21 @@ namespace QLQuanCaPhe
             int type = (int)nmAccountType.Value;
             if (AccountDAO.Instance.InsertAccount(username, displayname, type))
             {
-                MessageBox.Show("Thêm Tài khoản thành công!!!");
-                LoadListAccount();
-                if (insertAccount != null)
+                DialogResult result = MessageBox.Show("Xác nhận thêm tài khoản mới?", "Questions", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
                 {
-                    insertAccount(this, new EventArgs());
+
+                    MessageBox.Show("Thêm Tài khoản thành công!!!", "Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadListAccount();
+                    if (insertAccount != null)
+                    {
+                        insertAccount(this, new EventArgs());
+                    }
                 }
             }
             else
             {
-                MessageBox.Show("Có lỗi xẩy ra! Vui lòng thử lại");
+                MessageBox.Show("Có lỗi xẩy ra! Vui lòng thử lại", "Errors", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -354,7 +369,7 @@ namespace QLQuanCaPhe
                 if (result == DialogResult.Yes)
                 {
 
-                    MessageBox.Show("Sửa món thành công!!!");
+                    MessageBox.Show("Sửa món thành công!!!", "Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadListFood();
                     if (updateFood != null)
                     {
@@ -364,7 +379,7 @@ namespace QLQuanCaPhe
             }
             else
             {
-                MessageBox.Show("Có lỗi xẩy ra! Vui lòng thử lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Có lỗi xẩy ra! Vui lòng thử lại", "Errors", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -377,16 +392,21 @@ namespace QLQuanCaPhe
             string status = txbTableStatus.Text;
             if (TableDAO.Instance.UpdateTable(id, name, status))
             {
-                MessageBox.Show("Sửa bàn thành công!!!");
-                LoadListTable();
-                if (updateTable != null)
+                DialogResult result = MessageBox.Show("Sửa thông tin của bàn ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
                 {
-                    updateTable(this, new EventArgs());
+                    MessageBox.Show("Sửa bàn thành công!!!", "Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadListTable();
+                    if (updateTable != null)
+                    {
+                        updateTable(this, new EventArgs());
+                    }
+
                 }
             }
             else
             {
-                MessageBox.Show("Có lỗi xẩy ra! Vui lòng thử lại");
+                MessageBox.Show("Có lỗi xẩy ra! Vui lòng thử lại", "Errors", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         //sửa loại
@@ -397,16 +417,21 @@ namespace QLQuanCaPhe
 
             if (CategoryDAO.Instance.UpdateCategory(id, name))
             {
-                MessageBox.Show("Sửa Loại thành công!!!");
-                LoadListCategory();
-                if (updateCategory != null)
+                DialogResult result = MessageBox.Show("Sửa thông tin Loại sản phẩm?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
                 {
-                    updateCategory(this, new EventArgs());
+
+                    MessageBox.Show("Sửa Loại thành công!!!", "Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadListCategory();
+                    if (updateCategory != null)
+                    {
+                        updateCategory(this, new EventArgs());
+                    }
                 }
             }
             else
             {
-                MessageBox.Show("Có lỗi xẩy ra! Vui lòng thử lại");
+                MessageBox.Show("Có lỗi xẩy ra! Vui lòng thử lại", "Errors", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -420,16 +445,21 @@ namespace QLQuanCaPhe
 
             if (AccountDAO.Instance.UpdateAccount(username, displayname, type))
             {
-                MessageBox.Show("Sửa tài khoản thành công!!!");
-                LoadListAccount();
-                if (updateAccount != null)
+                DialogResult result = MessageBox.Show("Sửa thông tin tài khoản?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
                 {
-                    updateAccount(this, new EventArgs());
+
+                    MessageBox.Show("Sửa tài khoản thành công!!!", "Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadListAccount();
+                    if (updateAccount != null)
+                    {
+                        updateAccount(this, new EventArgs());
+                    }
                 }
             }
             else
             {
-                MessageBox.Show("Có lỗi xẩy ra! Vui lòng thử lại");
+                MessageBox.Show("Có lỗi xẩy ra! Vui lòng thử lại", "Errors", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -471,7 +501,7 @@ namespace QLQuanCaPhe
                 if (result == DialogResult.Yes)
                 {
 
-                    MessageBox.Show("Xóa món thành công!!!");
+                    MessageBox.Show("Xóa món thành công!!!", "Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadListFood();
                     if (deleteFood != null)
                     {

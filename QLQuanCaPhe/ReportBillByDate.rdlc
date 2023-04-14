@@ -6,24 +6,24 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>3.07269cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>3.07269cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.64653cm</Width>
+              <Width>4.21922cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>3.07269cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>3.07269cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>1.03215cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -228,7 +228,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>1.03215cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -430,9 +430,8 @@
         </TablixRowHierarchy>
         <DataSetName>DataSetBillByDate</DataSetName>
         <Top>1.65806cm</Top>
-        <Left>1.27cm</Left>
-        <Height>1.2cm</Height>
-        <Width>13.64653cm</Width>
+        <Height>2.06431cm</Height>
+        <Width>16.51cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -478,7 +477,6 @@
     <Height>2in</Height>
     <Style>
       <Border>
-        <Color>Blue</Color>
         <Style>Solid</Style>
       </Border>
     </Style>
@@ -542,6 +540,7 @@
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
+  <Language>vi-VN</Language>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>376133a4-20b7-4456-9f8a-5c2ad886a4ef</rd:ReportID>
 </Report>

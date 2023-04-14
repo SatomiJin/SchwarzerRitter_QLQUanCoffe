@@ -244,7 +244,7 @@ GO
  END
  GO
  --Quớ mệt mũi với cái câu truy vấn này 
- ---------
+ ------------------------------------------------------
 --Tạo tringger cho việc update status của table
 create trigger UTG_UpdateBillInfo
 ON dbo.BillInfo For insert , update
@@ -301,7 +301,7 @@ begin
 		update dbo.TableFood set status = N'Bàn trống' where id = @idTable
 end
 go
-----
+-------------------------------------------------------------------
 create table dbo.Bill
 add discount int
 
@@ -310,7 +310,7 @@ update dbo.Bill set discount = 0
 select * from Bill
 go
 -----------chuyển bàn
-alter proc USP_SwitchTable
+create proc USP_SwitchTable
 @idTable1 int , @idTable2 int --bởi vì table có thể null còn billInfo thì ko nên ta sẽ truyền vào Proc 2 idTable
 as
 begin

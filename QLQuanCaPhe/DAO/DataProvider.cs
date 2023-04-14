@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace QLQuanCaPhe.DAO
 {
@@ -22,7 +17,7 @@ namespace QLQuanCaPhe.DAO
         private DataProvider() { }
 
         //chuỗi kết nối để kết nối với csdl
-        private string connectionStr = "Data Source=SATOMIKOUTAROU\\SATOMI;Initial Catalog=QuanLyQuanCafe;Integrated Security=True";
+        private string connectionStr = "Data Source=SATOMIKOUTAROU\\KOUTA;Initial Catalog=QuanLyQuanCafe;Integrated Security=True";
 
 
         public DataTable /*int*/ ExecuteQuery(string query, object[] parameter = null)
@@ -38,15 +33,15 @@ namespace QLQuanCaPhe.DAO
                 connection.Open();
                 SqlCommand command = new SqlCommand(query, connection);
 
-               if(parameter != null)
+                if (parameter != null)
                 {
-                    string[]  listPara = query.Split(' ');
+                    string[] listPara = query.Split(' ');
 
                     int i = 0;
                     foreach (string para in listPara)
                     {
-                        if(para.Contains("@")) 
-                        { 
+                        if (para.Contains("@"))
+                        {
                             command.Parameters.AddWithValue(para, parameter[i]);
                             i++;
                         }
@@ -57,7 +52,7 @@ namespace QLQuanCaPhe.DAO
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
 
                 //đổ dữ liệu đã lấy ra vào biến data
-               adapter.Fill(data);
+                adapter.Fill(data);
                 /* data = command.ExecuteScalar();*/
 
                 //đóng connection
@@ -94,12 +89,12 @@ namespace QLQuanCaPhe.DAO
                     }
                 }
 
-               /* //sql Adapter sẽ làm trung gian lấy dữ liệu và đổ vào DataTable
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                /* //sql Adapter sẽ làm trung gian lấy dữ liệu và đổ vào DataTable
+                 SqlDataAdapter adapter = new SqlDataAdapter(command);
 
-                //đổ dữ liệu đã lấy ra vào biến data
-                adapter.Fill(data);*/
-               data = command.ExecuteNonQuery();
+                 //đổ dữ liệu đã lấy ra vào biến data
+                 adapter.Fill(data);*/
+                data = command.ExecuteNonQuery();
                 /*data = command.ExecuteScalar();*/
 
                 //đóng connection
